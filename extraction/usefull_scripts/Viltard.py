@@ -29,6 +29,7 @@ import random
 
 from netCDF4 import Dataset
 
+exit(0)
 consumer_key = '4lFF8IFB4q9OIptYzESHT0oFoyga'
 consumer_secret = 'uEbbU4yvMIBpllWiM6RURyDjG8Ma'
 credentials = (consumer_key, consumer_secret)
@@ -110,7 +111,7 @@ for YYYY in ["2015", "2011", "2013", "2021", "2012", "2015","2016", "2017", "201
               #    image car le balayage se fait du nord au sud sur 10'.
               if ((mi[14:16] == "55") or (mi[14:16] == "10") or (mi[14:16] == "25") or (mi[14:16] == "40")):
                  Fileout  =  'sevmos_'+mi[:10]+'_'+mi[11:13]+mi[14:16]+mi[17:19]+'.nc'
-                 DumOut = glob('/net/nfs/precipitations/nicoEUMETSAT/DATA/'+Fileout)
+                 DumOut = glob('/net/nfs/precipitations/MatthieuM/DATA/'+Fileout)
                  if (len(DumOut) >= 1):
                     print(Fileout," existe deja, on boucle au suivant")
                     continue
@@ -185,7 +186,7 @@ for YYYY in ["2015", "2011", "2013", "2021", "2012", "2015","2016", "2017", "201
                  # 'VIS008',
                  # 'WV_062',
                  # 'WV_073',
-                 DSName = ['IR_087', 'IR_108', 'IR_120']
+                 DSName = ['WV_062','WV_073','IR_087','IR_097','IR_108', 'IR_120','IR_134',]
                  MSG.load(DSName)
 
                  #%% -- Resampling the SEVIRI data to MF domain
